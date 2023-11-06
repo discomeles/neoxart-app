@@ -4,7 +4,6 @@ import AppNavbar from './AppNavbar'
 const HomePage = ({info}) => {
     return (
         <>
-        <AppNavbar />
         <NoteCard info={info}/>
         </>
     )
