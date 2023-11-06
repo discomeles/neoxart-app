@@ -55,7 +55,7 @@ function App() {
     <div className='App'>
       <AppNavbar />
         <Routes>
-          <Route path="/" element={<HomePage info={info} />} />
+          <Route path="/" element={<HomePage info={info1} />} />
           <Route path="/login" element={<LoginPage />} />
       </Routes> 
     </div>

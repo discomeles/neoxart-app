@@ -1,10 +1,12 @@
-import NoteCard from './NoteCard'
-import AppNavbar from './AppNavbar'
+import NoteCard from '../components/NoteCard'
+import AppNavbar from '../components/AppNavbar'
+import TextEditor from '../components/TextEditor'
 
 const HomePage = ({info}) => {
     return (
         <>
         <NoteCard info={info}/>
+        <TextEditor />
         </>
     )
 }

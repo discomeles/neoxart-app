@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import AppNavbar from './AppNavbar'
+import AppNavbar from '../components/AppNavbar'
 
 const LoginForm = () => {
     return (
