@@ -6,8 +6,6 @@ import { NavLink } from 'react-router-dom'
 
 const AppNavbar = () => {
   return (
-    // expand - breakpoint below which the nawbar will collapse
-    // bool | string: sm, md, lg, xl, xxl
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand href="#home">

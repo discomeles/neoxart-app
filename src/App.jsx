@@ -43,6 +43,7 @@ NODEMON!`
 function App() {
   const [state, setState] = useState({
     isLogged:true,
+    edit:false,
     token:"",
     error:"",
     user:""

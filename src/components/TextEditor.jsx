@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 const EditorCard = () => {
   return (
     <div style={{ whiteSpace: "pre-wrap"}}>
-      <Card>
+      <Card style={{ width: '20rem'}}>
         <Card.Body>
         <Form>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
