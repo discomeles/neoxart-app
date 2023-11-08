@@ -5,7 +5,7 @@ import TextEditor from '../components/TextEditor'
 const HomePage = ({info, addEntry}) => {
     return (
         <>
-        <NoteCard info={info}/>
+        <NoteCard info={info}/>     
         <TextEditor addEntry={addEntry}/>
         </>
     )
