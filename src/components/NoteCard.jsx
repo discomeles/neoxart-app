@@ -3,11 +3,11 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
-const NoteCard = ({info}) => {
+const NoteCard = ({entries}) => {
   return (
   <Container>
     <Row bsPrefix="row row-cols-auto">
-    {info.map(entry =>
+    {entries.map(entry =>
     <Col key={entry.title}  className='py-2'>
       <Card  style={{ width: '20rem', whiteSpace: "pre-wrap"}}>
         <Card.Header as="h5">{entry.title}</Card.Header>

@@ -15,11 +15,11 @@ const TextEditor = ({addEntry}) => {
     event.preventDefault();
     console.log("foo")
     addEntry(noteState)
-    // setNoteState({
-    //   title:'',
-    //   text:'',
-    //   tags:''
-    // })
+    setNoteState({
+      title:'',
+      text:'',
+      tags:''
+    })
   }
 
   const handleTitleChange = (event) => {
@@ -35,7 +35,7 @@ const TextEditor = ({addEntry}) => {
   }
 
   return (
-    <div style={{ whiteSpace: "pre-wrap"}}>
+    // <div style={{ whiteSpace: "pre-wrap"}}>
       <Card style={{ width: '20rem'}}>
         <Card.Body>
           <Form onSubmit={onSubmit}>
@@ -82,7 +82,7 @@ const TextEditor = ({addEntry}) => {
           </Form>
         </Card.Body>
       </Card>
-    </div>
+    // </div>
   )
 }
   

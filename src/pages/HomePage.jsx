@@ -2,10 +2,10 @@ import NoteCard from '../components/NoteCard'
 import AppNavbar from '../components/AppNavbar'
 import TextEditor from '../components/TextEditor'
 
-const HomePage = ({info, addEntry}) => {
+const HomePage = ({entries, addEntry}) => {
     return (
         <>
-        <NoteCard info={info}/>     
+        <NoteCard entries={entries}/>     
         <TextEditor addEntry={addEntry}/>
         </>
     )
