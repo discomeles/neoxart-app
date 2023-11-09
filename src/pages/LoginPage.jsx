@@ -8,9 +8,14 @@ import AppNavbar from '../components/AppNavbar'
 const LoginForm = () => {
     return (
       <>
+      <Form>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Username</Form.Label>
+          <Form.Control type="email" placeholder="Username" />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="email" placeholder="Email" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
@@ -18,6 +23,7 @@ const LoginForm = () => {
         </Form.Group>
           <Button variant="dark" type="submit">Login</Button>{' '}
           <Button variant="dark" type="submit">Register</Button>
+      </Form>
       </>
     )
   }
