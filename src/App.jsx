@@ -8,6 +8,7 @@ import AppNavbar from './components/AppNavbar'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import AddEntryButton from './components/AddEntryButton'
+import AlertModal from './components/AlertModal'
 
 function App() {
   const [state, setState] = useState({
@@ -15,7 +16,7 @@ function App() {
     viewEditor:false,
     token:"",
     error:"",
-    user:""
+    user:"",
   })
 
   // --- Check if user is already logged in
@@ -33,7 +34,7 @@ function App() {
 
   const [entries, setEntries] = useState([])
 
-  const [dataRequest, setDataRequest] = useState([])
+  const [dataRequest, setDataRequest] = useState("")
 
   // --- Get initial entries ---
   useEffect(() => {
@@ -85,6 +86,18 @@ function App() {
 
   const registerUser = (userObject) => {
     console.log('register', userObject)
+    userService.register(userObject)
+    .then (response => {
+      if (response.status === 201) {
+        const name = response.data.username
+        setAlertModalText("Succesfully registered user: " +userObject.username+"\nYou may now log in.")
+        setShowAlertModal(true)
+        setTimeout(() => {
+          setAlertModalText("")
+          setShowAlertModal(false)
+        },5000)
+      }
+    })
   }
 
   const logUserOut = () => {
@@ -93,7 +106,7 @@ function App() {
     window.localStorage.clear()
   }
 
-  // --- Entry editing modal
+  // --- Entry editing modal ---
   const [showModal, setShowModal] = useState(false)
 
   const handleShowModal = (event) => {
@@ -103,6 +116,19 @@ function App() {
   const handleCloseModal = (event) => {
     setShowModal(false)
   }
+
+  // --- Alert modal ---
+  const [showAlertModal, setShowAlertModal] = useState(false)
+  const [alertModalText, setAlertModalText] = useState("")
+ 
+  const handleShowAlertModal = () => {
+    setShowModal(true)
+  }
+
+  const handleCloseAlertModal = () => {
+    setShowModal(false)
+  }
+
 
   // --- Rendering ---
 
@@ -144,6 +170,7 @@ function App() {
         userFunction={null}
         user={null}
       />
+      <AlertModal showAlertModal={showAlertModal} alertModalText={alertModalText}/>
         <Routes>
           <Route 
             path="/" 
