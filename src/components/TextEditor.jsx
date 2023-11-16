@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card"
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const TextEditor = ({addEntry}) => {
+const TextEditor = ({addEntry, handleCloseModal}) => {
 
   const [noteState, setNoteState] = useState({
     title:'',
@@ -13,13 +13,23 @@ const TextEditor = ({addEntry}) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log("foo")
     addEntry(noteState)
     setNoteState({
       title:'',
       text:'',
       tags:''
     })
+    handleCloseModal()
+  }
+
+  const handleDiscard = (event) => {
+    event.preventDefault()
+    setNoteState({
+      title:'',
+      text:'',
+      tags:''
+    })
+    handleCloseModal()
   }
 
   const handleTitleChange = (event) => {
@@ -75,7 +85,7 @@ const TextEditor = ({addEntry}) => {
             <Button 
               variant="secondary" 
               type="reset" 
-              onClick={() => console.log("discard")}
+              onClick={handleDiscard}
             >
               Discard
             </Button>
