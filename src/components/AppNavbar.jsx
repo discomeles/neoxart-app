@@ -5,17 +5,24 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Button from 'react-bootstrap/Button'
 import { NavLink } from 'react-router-dom'
 
-const NavigationLinks = ({loginStatus, userFunction, user}) => {
+const NavigationLinks = ({loginStatus, userFunction, user, handleFoo}) => {
 if (loginStatus) {
   const navtitle=`Welcome, ${user}`
+
+  // const handleClick = (event) => {
+  //   console.log(event)
+  //   console.log('click')
+  //   //handleFoo()
+  // }
+
   return (
     <>
     <NavDropdown title={navtitle} id="basic-nav-dropdown" align="end">
       <NavDropdown.Item onClick={userFunction}>
       Logout
       </NavDropdown.Item>
-      <NavDropdown.Item>
-      Create a new entry
+      <NavDropdown.Item onClick={handleFoo}>
+      Refresh
       </NavDropdown.Item>  
     </NavDropdown>
     </>

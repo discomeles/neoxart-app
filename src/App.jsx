@@ -8,6 +8,7 @@ import AppNavbar from './components/AppNavbar'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import AddEntryButton from './components/AddEntryButton'
+import RefreshButton from './components/RefreshButton'
 import AlertModal from './components/AlertModal'
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
     error:"",
     user:"",
   })
+
+  const [entries, setEntries] = useState([])
+
+  const [dataRequest, setDataRequest] = useState(0)
 
   // --- Check if user is already logged in
   useEffect(() => {
@@ -31,10 +36,6 @@ function App() {
           user:loggedUser}))
     }
   },[])
-
-  const [entries, setEntries] = useState([])
-
-  const [dataRequest, setDataRequest] = useState("")
 
   // --- Get initial entries ---
   useEffect(() => {
@@ -129,6 +130,10 @@ function App() {
     setShowModal(false)
   }
 
+  const handleFoo = () => {
+    console.log('bar')
+    setDataRequest('get')
+  }
 
   // --- Rendering ---
 
@@ -139,12 +144,16 @@ function App() {
         loginStatus={state.isLogged} 
         userFunction={logUserOut}
         user={state.user}
+        handleFoo={handleFoo}
       />
       <AddEntryButton 
         loginStatus={state.isLogged}
         handleShowModal={handleShowModal}
       />
-      
+      <RefreshButton 
+      loginStatus={state.isLogged}
+      handleFoo={handleFoo}
+      />
       <Routes>
         <Route 
           path="/" 
