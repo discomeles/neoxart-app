@@ -12,10 +12,10 @@ const NoteCard = ({entries}) => {
     <Col key={entry.id}  className='py-2'>
       <Card  style={{ width: '20rem', whiteSpace: "pre-wrap"}}>
         <Card.Header as="h5">
-          {entry.title}
-          {/* <Button variant="primary" size="sm">
-          E
-        </Button> */}
+          {entry.title}{` `}
+          <Button variant="light" className="float-end" size="sm">
+          Edit
+        </Button>
           </Card.Header>
         <Card.Body>
           <Card.Text>
