@@ -9,6 +9,7 @@ const NavigationLinks = ({loginStatus, userFunction, user, handleFoo}) => {
 if (loginStatus) {
   const navtitle=`Welcome, ${user}`
 
+  // --- Testing navdropdown functionalities ---
   // const handleClick = (event) => {
   //   console.log(event)
   //   console.log('click')
@@ -34,6 +35,7 @@ if (loginStatus) {
 }
 }
 
+// --- Testing the location of a button for new entries ---
 // const AddEntryButton = ({loginStatus}) => {
 //   if (loginStatus) {
 //     return (

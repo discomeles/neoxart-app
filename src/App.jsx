@@ -85,6 +85,7 @@ function App() {
     
   }
 
+  // --- Register user ---
   const registerUser = (userObject) => {
     console.log('register', userObject)
     userService.register(userObject)
@@ -101,6 +102,7 @@ function App() {
     })
   }
 
+  // --- Log user out ---
   const logUserOut = () => {
     console.log('log out')
     setState(state => ({ ...state, isLogged:false}))
@@ -130,6 +132,8 @@ function App() {
     setShowModal(false)
   }
 
+  // --- A Test function ---
+  // Testing how to update all entries
   const handleFoo = () => {
     console.log('bar')
     setDataRequest('get')
